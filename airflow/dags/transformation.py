@@ -1,12 +1,11 @@
-##import required libraries
 import pyspark.sql
 
 ##create spark session
 spark = pyspark.sql.SparkSession \
-        .builder \
-        .appName("Python Spark SQL basic example") \
-        .config('spark.driver.extraClassPath', "E:/Course/Data Engineer/Data_Engineering_Foundations/postgresql-42.7.4.jar") \
-        .getOrCreate()
+    .builder \
+    .appName("Exercise Spark dude") \
+    .config('spark.driver.extraCkassPath', "E:/Course/Data Engineer/Data_Engineering_Foundations/postgresql-42.7.4.jar") \
+    .getOrCreate()
 
 ##read movies table from db using spark
 def extract_movies_to_df():
@@ -43,7 +42,6 @@ def transform_avg_ratings(movies_df, users_df):
     df = df.drop("movie_id")
     return df
 
-
 ##load transformed dataframe to the database
 def load_df_to_db(df):
     mode = "overwrite"
@@ -56,9 +54,11 @@ def load_df_to_db(df):
                   table = "avg_ratings",
                   mode = mode,
                   properties = properties)
-
+    
 if __name__ == "__main__":
     movies_df = extract_movies_to_df()
     users_df = extract_users_to_df()
+    ##pass the dataframes to the transformation function
     ratings_df = transform_avg_ratings(movies_df, users_df)
+    ##load the ratings dataframe 
     load_df_to_db(ratings_df)

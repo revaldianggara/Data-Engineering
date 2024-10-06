@@ -1,0 +1,6 @@
+[2024-10-06T16:29:28.404+0700] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2024-10-06T16:29:28.405+0700] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2024-10-06T16:29:28.406+0700] {manager.py:485} INFO - Checking for new files in /mnt/e/Course/Data Engineer/Data_Engineering_Foundations/airflow/dags every 300 seconds
+[2024-10-06T16:29:28.406+0700] {manager.py:821} INFO - Searching for files in /mnt/e/Course/Data Engineer/Data_Engineering_Foundations/airflow/dags
+[2024-10-06T16:29:28.431+0700] {manager.py:824} INFO - There are 56 files in /mnt/e/Course/Data Engineer/Data_Engineering_Foundations/airflow/dags
+[2024-10-06T16:29:30.396+0700] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
